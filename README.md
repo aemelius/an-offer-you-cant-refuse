@@ -7,7 +7,7 @@ This season, we decided to go crazy with special offers:
 - Buy one apple, get one free!
 - Buy three watermelons for the price of two!
 
-PS
+### PS
 
 Sorry, currently we don't have special offers on oranges.
 
