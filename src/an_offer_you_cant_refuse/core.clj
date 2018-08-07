@@ -1,5 +1,8 @@
 (ns an-offer-you-cant-refuse.core)
 
+(require '[clojure.tools.cli :refer [cli]])
+
+
 (def prices {:apple 20 :orange 50 :watermelon 80})
 
 (defmulti compute-price (fn [what howmany] what))
@@ -28,5 +31,29 @@
             (fn [item] (compute-price (first item) (second item)))
             basket)
           ))
+
+
+
+(defn -main [& args]
+  (let [[opts args banner] (cli args
+                                ["-h" "--help" "I need to know how many apples, oranges and watermelons are in your basket."
+                                 :default false :flag true]
+                                ["-a" "--apples" "How many apples are there in your basket?" :parse-fn #(Integer. %) :default 0]
+                                ["-o" "--oranges" "How many oranges are there in your basket?" :parse-fn #(Integer. %) :default 0]
+                                ["-w" "--watermelons" "How many watermelons are there in your basket?" :parse-fn #(Integer. %) :default 0]
+                                )
+        apples (:apples opts)
+        oranges (:oranges opts)
+        watermelons (:watermelons opts)]
+    (if (:help opts)
+      (println banner)
+
+      (println (str "The total price for " apples " apples "
+                                           oranges " oranges and "
+                                           watermelons " watermelons is: "
+                    (/ (total-price {:apple apples :orange oranges :watermelon watermelons }) 100.)
+                    " pounds.") )
+      )
+    ))
 
 
