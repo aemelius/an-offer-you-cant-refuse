@@ -4,16 +4,18 @@
 
 (defmulti compute-price (fn [what howmany] what))
 
-(defmethod compute-price :apple [what howmany]
-  (+ (* (quot howmany 2) (:apple prices))
-     (* (mod howmany 2) (:apple prices))
+(defn x-for-the-price-of-y [x y what howmany]
+  (+ (* (quot howmany x) (* (get prices what) y))
+     (* (mod howmany x) (get prices what))
      ))
+
+(defmethod compute-price :apple [what howmany]
+  (x-for-the-price-of-y 2 1 :apple howmany)
+  )
 
 (defmethod compute-price :watermelon [what howmany]
-  (+ (* (quot howmany 3) (* (:watermelon prices) 2)  ) ;; groups of 3 cost as 2
-     (* (mod howmany 3) (:watermelon prices)) ;; the remaining are full price
-     ))
-
+  (x-for-the-price-of-y 3 2 :watermelon howmany)
+  )
 
 (defmethod compute-price :default [what howmany]
   (* howmany (get prices what)))
