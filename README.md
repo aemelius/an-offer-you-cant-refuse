@@ -64,6 +64,37 @@ The total price for 4 apples 3 oranges and 5 watermelons is: 5.1 pounds.
 $ java -jar target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar --apples 10 --oranges 2 --watermelons 2
 The total price for 10 apples 2 oranges and 2 watermelons is: 3.6 pounds.
 ```
+# Why bothering with the polymorphic implementation?
+
+
+Without polymorphism I could have kept the codebase much smaller.
+
+In python, for example, I could have just written something like:
+
+```
+def x_for_the_price_of_y(x, y, howmany, unit_price):
+    return (((howmany / x) * unit_price * y) +
+            (howmany % x) * unit_price)
+
+
+def total_basket_price(apples, oranges, watermelons):
+    return (x_for_the_price_of_y(2, 1, apples, 20) +
+            x_for_the_price_of_y(1, 1, oranges, 50) +
+            x_for_the_price_of_y(3, 2, watermelons, 80))
+
+
+print(total_basket_price(apples=4, oranges=3, watermelons=5)/100.))
+print(total_basket_price(apples=0, oranges=0, watermelons=5)/100.))
+```
+
+So why bother with the polymorphic implementation in the first place?
+
+Because the polymorphic code would be easier to edit and extend:
+1. The function calculating the total will never need to change
+2. If a promotion rule changes for a specific product I will just need to edit the corresponding implementation, and nothing else.
+3. Adding new products is trivial, and can be accomplished by adding new defmethod
+ definitions (without editing any of the existing code apart from user input management)
+
 
 ## License
 
