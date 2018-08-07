@@ -1,6 +1,6 @@
 # an-offer-you-cant-refuse
 
-A little Clojure program designed to compute prices of apples, oranges and watermelons (and to play a bit with polimorphism).
+A little Clojure program designed to compute prices of apples, oranges and watermelons (and to play a bit with polymorphism).
 
 This season, we decided to go crazy with special offers:
 
