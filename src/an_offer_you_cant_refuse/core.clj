@@ -21,5 +21,11 @@
   (* howmany (get prices what)))
 
 
+(defn total-price [basket]
+  (reduce +
+          (map
+            (fn [item] (compute-price (first item) (second item)))
+            basket)
+          ))
 
 

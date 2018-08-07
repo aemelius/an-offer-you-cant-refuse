@@ -3,10 +3,10 @@
             [an-offer-you-cant-refuse.core :refer :all]
             [expectations :refer :all]))
 
-(expect 40 (compute-price :apple 4))
 (expect 20 (compute-price :apple 1))
 (expect 20 (compute-price :apple 2))
 (expect 40 (compute-price :apple 3))
+(expect 40 (compute-price :apple 4))
 
 (expect 50 (compute-price :orange 1))
 (expect 100 (compute-price :orange 2))
@@ -17,5 +17,9 @@
 (expect 160 (compute-price :watermelon 2))
 (expect 160 (compute-price :watermelon 3))
 (expect 240 (compute-price :watermelon 4))
+(expect 320 (compute-price :watermelon 5))
+
+(expect (+ 40 150 320) (total-price {:apple 4 :orange 3 :watermelon 5}))
+
 
 
