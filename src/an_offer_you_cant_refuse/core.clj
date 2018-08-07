@@ -17,6 +17,7 @@
   (x-for-the-price-of-y 3 2 :watermelon howmany)
   )
 
+; by default, no special offers are applied
 (defmethod compute-price :default [what howmany]
   (* howmany (get prices what)))
 
