@@ -25,6 +25,15 @@ The tests are in `test/an_offer_you_cant_refuse` (I used the expectations librar
 
 If you want to run the tests, just run: `lein test`
 
+```
+$ lein test
+
+lein test an-offer-you-cant-refuse.core-test
+
+Ran 17 tests containing 17 assertions in 96 msecs
+
+```
+
 # How do I build and run the command line tool?
 
 
