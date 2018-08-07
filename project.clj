@@ -6,5 +6,6 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [expectations "1.4.52"]
                  [org.clojure/tools.cli "0.2.4"]]
+  :plugins [[lein-cljfmt "0.6.0"]]
   :main an-offer-you-cant-refuse.core
   :aot [an-offer-you-cant-refuse.core])
