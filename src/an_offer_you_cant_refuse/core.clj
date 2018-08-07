@@ -1,5 +1,5 @@
-(ns an-offer-you-cant-refuse.core)
-
+(ns an-offer-you-cant-refuse.core
+  (:gen-class))
 (require '[clojure.tools.cli :refer [cli]])
 
 

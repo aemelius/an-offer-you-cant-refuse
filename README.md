@@ -25,6 +25,37 @@ The tests are in `test/an_offer_you_cant_refuse` (I used the expectations librar
 
 If you want to run the tests, just run: `lein test`
 
+# How do I build and run the command line tool?
+
+
+##### Build
+```
+$ lein uberjar
+Compiling an-offer-you-cant-refuse.core
+Compiling an-offer-you-cant-refuse.core
+Created /Users/sbruno/an-offer-you-cant-refuse/target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT.jar
+Created /Users/sbruno/an-offer-you-cant-refuse/target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar
+```
+
+####  Use the command line tool
+  
+```
+$ java -jar target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar --help
+Switches               Default  Desc
+--------               -------  ----
+-h, --no-help, --help  false    I need to know how many apples, oranges and watermelons are in your basket.
+-a, --apples           0        How many apples are there in your basket?
+-o, --oranges          0        How many oranges are there in your basket?
+-w, --watermelons      0        How many watermelons are there in your basket?
+
+$ java -jar target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar -a 4 -o 3 -w 5
+The total price for 4 apples 3 oranges and 5 watermelons is: 5.1 pounds.
+$ java -jar target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar --apples 4 --oranges 3 --watermelons 5
+The total price for 4 apples 3 oranges and 5 watermelons is: 5.1 pounds.
+$ java -jar target/an-offer-you-cant-refuse-0.1.0-SNAPSHOT-standalone.jar --apples 10 --oranges 2 --watermelons 2
+The total price for 10 apples 2 oranges and 2 watermelons is: 3.6 pounds.
+```
+
 ## License
 
 Copyright © 2018 Simone Bruno
