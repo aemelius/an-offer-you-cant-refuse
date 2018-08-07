@@ -16,9 +16,7 @@
 (defmethod compute-price :watermelon [what howmany]
   (x-for-the-price-of-y 3 2 :watermelon howmany))
 
-; by default, no special offers are applied
-
-
+; by default, no special offers are applied. This applies, e.g., to oranges
 (defmethod compute-price :default [what howmany]
   (* howmany (get prices what)))
 
@@ -40,13 +38,10 @@
         watermelons (:watermelons opts)]
     (if (:help opts)
       (println banner)
-
       (println (str "The total price for " apples " apples "
                     oranges " oranges and "
                     watermelons " watermelons is: "
                     (/ (total-price {:apple apples :orange oranges :watermelon watermelons}) 100.)
-
-
                     " pounds.")))))
 
 

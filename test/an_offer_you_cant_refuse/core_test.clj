@@ -16,8 +16,6 @@
 
 
 ; no oranges are cheap
-
-
 (expect 0 (compute-price :orange 0))
 
 ; buy one pay one: no special offers for oranges
@@ -47,9 +45,7 @@
 (expect 0 (total-price {:apple 0 :orange 0 :watermelon 0}))
 
 ; example of total basket price calculation
-(expect (+ 40 150 320) (total-price {:apple 4 :orange 3 :watermelon
-
-                                     5}))
+(expect (+ 40 150 320) (total-price {:apple 4 :orange 3 :watermelon 5}))
 
 
 
