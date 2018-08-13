@@ -52,6 +52,7 @@
 
 ; example of total basket price calculation
 (expect (+ 40 150 320) (total-price {:apple 4 :orange 3 :watermelon 5} "11.08.2018"))
+(expect (+ 80 150 400) (total-price {:apple 4 :orange 3 :watermelon 5} "11.08.2019"))
 
 
 
