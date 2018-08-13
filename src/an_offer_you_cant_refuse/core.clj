@@ -13,7 +13,7 @@
 
 (def promotion-valid-until {:apple "12.08.2018" :watermelon "24.12.2018"} )
 
-(defn promotion-valid? [what date] (and (what promotion-valid-until) (= -1  (compare
+(defn promotion-valid? [what date] (and (what promotion-valid-until) (> 1  (compare
                                            (create-date date)
                                            (create-date
                                             (get promotion-valid-until what))))))

@@ -12,7 +12,7 @@
 (expect 40 (compute-price :apple 3 "11.08.2018"))
 
 ; one full price, one free, one full, one free
-(expect 40 (compute-price :apple 4 "11.08.2018"))
+(expect 40 (compute-price :apple 4 "12.08.2018"))
 
 ;full price if promotion expired
 (expect 40 (compute-price :apple 2 "13.08.2018"))
@@ -53,6 +53,7 @@
 ; example of total basket price calculation
 (expect (+ 40 150 320) (total-price {:apple 4 :orange 3 :watermelon 5} "11.08.2018"))
 (expect (+ 80 150 400) (total-price {:apple 4 :orange 3 :watermelon 5} "11.08.2019"))
+
 
 
 
