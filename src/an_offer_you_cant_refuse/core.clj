@@ -1,6 +1,7 @@
 (ns an-offer-you-cant-refuse.core
   (:gen-class)
-  (:import (java.text SimpleDateFormat)))
+  (:import (java.text SimpleDateFormat)
+           (java.util Date)))
 (require '[clojure.tools.cli :refer [cli]])
 
 (def prices {:apple 20 :orange 50 :watermelon 80})
@@ -60,7 +61,8 @@
       (println (str "The total price for " apples " apples "
                     oranges " oranges and "
                     watermelons " watermelons is: "
-                    (/ (total-price {:apple apples :orange oranges :watermelon watermelons}) 100.)
+                    (/ (total-price {:apple apples :orange oranges :watermelon watermelons} (.format
+                                                                                              (java.text.SimpleDateFormat. "dd.MM.yyyy")(new Date))) 100.)
                     " pounds.")))))
 
 
