@@ -66,7 +66,6 @@ The total price for 10 apples 2 oranges and 2 watermelons is: 3.6 pounds.
 ```
 # Why bothering with the polymorphic implementation?
 
-
 Without polymorphism I could have kept the codebase much smaller.
 
 In python, for example, I could have just written something like:
